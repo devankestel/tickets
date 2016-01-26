@@ -24,18 +24,42 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# Puma as the app server
+gem 'puma', '~>2.15'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# Add foreman to work with Puma Procfile
+gem 'foreman'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# Devise for User Authentication
+gem 'devise', '~> 3.5'
+
+# Add Bourbon, Neat, Bitters, and Refills for styling
+gem 'bourbon', '~> 4.2'
+gem 'neat', '~> 1.7'
+gem 'bitters', '~> 1.1'
+gem 'refills', '~> 0.1'
+
+# Slim for view templating
+gem 'slim', '~> 3.0'
+# Formtastic for easier forms
+gem 'formtastic', '~>3.1'
+# Will Paginate to break up index views
+gem 'will_paginate', '~> 3.1'
+
+group :test do
+  # Rspec for testing framework
+  gem 'rspec-rails', '~>3.0'
+  # Capybara for integration tests
+  gem 'capybara', '~>2.5'
+  # FactoryGirl for generating test factories
+  gem 'factory_girl_rails', '~>4.5' 
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # Pry for additional debugging support
+  gem 'pry'
 end
 
 group :development do
