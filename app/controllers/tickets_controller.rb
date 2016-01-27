@@ -2,7 +2,15 @@ class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.all.recent  
+  end
+  def assigned
+    @tickets = Ticket.all.recent.assigned_to_user(current_user)
+    render :index
+  end
+  def issued
+    @tickets = Ticket.all.recent.issued_by_user(current_user)
+    render :index
   end
   def show
   end

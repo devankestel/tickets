@@ -1,4 +1,7 @@
 =button_to 'New Ticket', new_ticket_path, method: :get
+li =link_to 'All Tickets', tickets_path 
+li =link_to 'Issued by Me', tickets_issued_path
+li =link_to 'Assigned to Me', tickets_assigned_path
 table.ticket-header
   tr
     th Title
