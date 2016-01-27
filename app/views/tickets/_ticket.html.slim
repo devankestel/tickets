@@ -1,0 +1,6 @@
+tr
+  td =link_to "#{ticket.title}", ticket_path(ticket)
+  td =ticket.user.email
+  td =ticket.created_at.strftime("%m/%d/%Y at %H:%M")
+  td =ticket.severity
+  td =ticket.assignee.email

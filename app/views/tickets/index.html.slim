@@ -1,0 +1,9 @@
+=button_to 'New Ticket', new_ticket_path, method: :get
+table.ticket-header
+  tr
+    th Title
+    th Author 
+    th Created At
+    th Severity
+    th Assignee  
+  =render @tickets
