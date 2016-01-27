@@ -3,6 +3,9 @@ tr
   td =ticket.user.email
   td =ticket.created_at.strftime("%m/%d/%Y at %H:%M")
   td 
-     button *{id: ticket.severity.downcase} 
+    button *{id: ticket.severity.downcase} 
       =ticket.severity
+  td
+    button *{id: ticket.statuses.all.recent.first.category.gsub(" ", "").underscore.dasherize}
+      =ticket.statuses.all.recent.first.category
   td =ticket.assignee.email

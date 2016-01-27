@@ -20,3 +20,11 @@ table.ticket-header
 section.ticket-content
   h1 =@ticket.title
   p =@ticket.body
+p
+table.status
+  tr
+    th Status
+    th Updated At
+    th Updated By
+    th Note
+  =render @statuses

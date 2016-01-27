@@ -1,0 +1,7 @@
+tr
+  td 
+    button *{id: status.category.gsub(" ", "").underscore.dasherize}  
+      =status.category
+  td =status.created_at.strftime("%m/%d/%Y at %H:%M")
+  td =status.user.email
+  td =status.note

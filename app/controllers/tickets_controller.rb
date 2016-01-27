@@ -13,10 +13,11 @@ class TicketsController < ApplicationController
     render :index
   end
   def show
+    @statuses = @ticket.statuses.all.recent
   end
   def new
     @user = current_user
-    @ticket = @user.tickets.new
+    @ticket = @user.tickets.new    
   end
   def create
     @user = current_user
