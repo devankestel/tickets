@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, path: 'accounts'
+  get 'tickets/assigned' => 'tickets#assigned'
+  get 'tickets/issued' => 'tickets#issued'
   resources :tickets
   root to: "tickets#index"
 
