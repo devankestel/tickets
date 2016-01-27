@@ -3,6 +3,12 @@
 @import "base/base";
 @import "refills/refills";
 
+$critical-color: rgba(192, 46, 29, 1);
+$major-color: rgba(241, 108, 32, 1);
+$minor-color: rgba(236, 170, 56, 1);
+$cosmetic-color: rgba(162, 184, 108, 1);
+
+
 .ticket-header{
   @include outer-container;
 }
@@ -10,3 +16,25 @@
 .ticket-content{
   @include outer-container;
 }
+
+.show-options{
+  @include outer-container;
+}
+.show-option{
+}
+
+#critical{
+  background-color: $critical-color;
+}
+
+#major{
+  background-color: $major-color;
+}
+#minor{
+  background-color: $minor-color;
+}
+#cosmetic{
+  background-color: $cosmetic-color;
+}
+
+

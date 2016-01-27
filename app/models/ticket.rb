@@ -9,5 +9,5 @@ class Ticket < ActiveRecord::Base
   scope :assigned_to_user, lambda { |user|
     where("tickets.assignee_id = ?", user.id)
 } 
-
+  validates :title, :body, :severity, :user_id, :assignee_id, presence: true
 end

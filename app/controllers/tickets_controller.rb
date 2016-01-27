@@ -20,8 +20,12 @@ class TicketsController < ApplicationController
   end
   def create
     @user = current_user
-    @ticket = @user.tickets.create(ticket_params)
-    redirect_to @ticket
+    @ticket = @user.tickets.new(ticket_params)
+    if @ticket.save
+      redirect_to @ticket, notice: "Ticket created successfully."
+    else
+      render :new
+    end
   end
   def edit
     @user = current_user
@@ -29,8 +33,11 @@ class TicketsController < ApplicationController
     render :new  
   end
   def update
-    @ticket.update(ticket_params)
-    redirect_to @ticket
+    if @ticket.update(ticket_params)
+      redirect_to @ticket, notice: "Ticket updated successfully."
+    else
+      render :new
+    end
   end
   def destroy
     @ticket.destroy

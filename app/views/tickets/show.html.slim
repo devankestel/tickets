@@ -1,3 +1,9 @@
+table.show-options
+  tr
+    th.show-option =button_to 'All Tickets', tickets_path, method: :get
+    -if @ticket.user == current_user
+      th.show-option =button_to 'Edit', edit_ticket_path(@ticket), method: :get
+      th.show-option =button_to 'Delete', ticket_path(@ticket), method: :delete, confirm: "Are you sure?"
 table.ticket-header
   tr
     th Author
@@ -7,12 +13,10 @@ table.ticket-header
   tr  
     td =@ticket.user.email
     td =@ticket.created_at.strftime("%m/%d/%Y at %H:%M")
-    td =@ticket.severity
+    td 
+      button *{id: @ticket.severity.downcase} 
+        =@ticket.severity
     td =@ticket.assignee.email
 section.ticket-content
   h1 =@ticket.title
   p =@ticket.body
-section.ticket-footer
-  =button_to 'All Tickets', tickets_path, method: :get
-  =button_to 'Edit', edit_ticket_path(@ticket), method: :get
-  =button_to 'Delete', ticket_path(@ticket), method: :delete, confirm: "Are you sure?"
