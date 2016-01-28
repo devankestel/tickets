@@ -11,4 +11,16 @@ class Ticket < ActiveRecord::Base
     where("tickets.assignee_id = ?", user.id)
 } 
   validates :title, :body, :severity, :user_id, :assignee_id, presence: true
+  
+  def set_status_options(user)
+    if user == self.user && user == self.assignee
+      ["Open", "Assigned", "Accepted", "In Process", "On Hold", "Submitted", "Resolved"]
+    elsif user == self.user
+      ["Open", "Assigned", "On Hold", "Resolved"]
+    elsif user == self.assignee
+      ["Accepted", "In Process", "On Hold", "Submitted"]
+    else
+      [self.user, user]
+    end
+  end
 end
