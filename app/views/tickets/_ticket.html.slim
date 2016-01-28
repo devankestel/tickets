@@ -1,6 +1,6 @@
 tr
-  td =link_to "#{ticket.title}", ticket_path(ticket)
-  td =ticket.user.email
+  td =link_to Ticket.table_display(ticket.title, 20), ticket_path(ticket)
+  td =Ticket.table_display(ticket.user.email, 15)
   td =ticket.created_at.strftime("%m/%d/%Y at %H:%M")
   td 
     button *{id: ticket.severity.downcase} 
@@ -8,4 +8,4 @@ tr
   td
     button *{id: ticket.statuses.all.recent.first.category.gsub(" ", "").underscore.dasherize}
       =ticket.statuses.all.recent.first.category
-  td =ticket.assignee.email
+  td =Ticket.table_display(ticket.assignee.email, 15)

@@ -22,7 +22,9 @@ class TicketsController < ApplicationController
   def create
     @user = current_user
     @ticket = @user.tickets.new(ticket_params)
+    @status = @ticket.statuses.new(category: "Assigned", note: "Ticket assigned to #{@ticket.assignee.email}", user_id: @user.id)
     if @ticket.save
+      @status.save
       redirect_to @ticket, notice: "Ticket created successfully."
     else
       render :new

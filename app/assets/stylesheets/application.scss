@@ -37,7 +37,9 @@ $resolved-color: rgba(21, 186, 20, 1);
 
 // All of the button colors
 // This could be refactored into a method in future
-
+td{
+  word-break: break-all;
+}
 #critical{
   background-color: $critical-color;
 }

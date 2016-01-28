@@ -23,4 +23,11 @@ class Ticket < ActiveRecord::Base
       [self.user, user]
     end
   end
+  def self.table_display(str, len)
+    if str.length > len
+      "#{str.slice(0..len-3)}..."
+    else
+      str
+    end
+  end
 end
