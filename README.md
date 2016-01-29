@@ -50,6 +50,10 @@ This app was designed to meet certain specifications.
         * rspec spec/models/status_spec.rb
           * Validations, model relations
         * User model is not covered because very little customization was made to Devise
+      * Integration (Feature Test)
+        More coverage is needed here, but I wanted to show the basic concept of using Capybara.
+        * rspec spec/features/ticket_controller_spec.rb
+          * Create new ticket 
 
   ##Extra Features
   * Scopes for recent tickets, tickets issued by user, tickets assigned to user

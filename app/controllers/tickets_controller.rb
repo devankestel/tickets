@@ -2,14 +2,14 @@ class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   def index
-    @tickets = Ticket.all.recent  
+    @tickets = Ticket.all.recent.paginate(page: params[:page], per_page: 20)  
   end
   def assigned
-    @tickets = Ticket.all.recent.assigned_to_user(current_user)
+    @tickets = Ticket.all.recent.assigned_to_user(current_user).paginate(:page => params[:page])
     render :index
   end
   def issued
-    @tickets = Ticket.all.recent.issued_by_user(current_user)
+    @tickets = Ticket.all.recent.issued_by_user(current_user).paginate(:page => params[:page])
     render :index
   end
   def show
