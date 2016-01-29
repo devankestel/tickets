@@ -54,7 +54,9 @@ group :test do
   # Capybara for integration tests
   gem 'capybara', '~>2.5'
   # FactoryGirl for generating test factories
-  gem 'factory_girl_rails', '~>4.5' 
+  gem 'factory_girl_rails', '~>4.5'
+  # Add shoula matchers for Rails validations resting in RSpec 
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development, :test do
