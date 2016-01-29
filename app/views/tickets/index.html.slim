@@ -15,6 +15,7 @@
   -if current_user
     .index-menu =button_to 'New Ticket', new_ticket_path, method: :get
 .spacer
+.paginate =will_paginate @tickets
 table.ticket-header
   tr
     th Title
@@ -24,3 +25,4 @@ table.ticket-header
     th Current Status
     th Assignee  
   =render @tickets
+.paginate =will_paginate @tickets

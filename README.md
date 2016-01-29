@@ -50,13 +50,28 @@ This app was designed to meet certain specifications.
         * rspec spec/models/status_spec.rb
           * Validations, model relations
         * User model is not covered because very little customization was made to Devise
+      * Integration (Feature Test)
+        More coverage is needed here, but I wanted to show the basic concept of using Capybara.
+        * rspec spec/features/ticket_controller_spec.rb
+          * Create new ticket 
 
   ##Extra Features
-  * Scopes for recent tickets, tickets issued by user, tickets assigned to user
-  * Status history available in addition to current status
-  * Status history includes user who changed status and a note
-  * Styling using Bourbon.io sass framework with Neat, Bitters, and Refills
-  * Seeds file using FFaker gem for demo mode
+    * Scopes for recent tickets, tickets issued by user, tickets assigned to user
+    * Status history available in addition to current status
+    * Status history includes user who changed status and a note
+    * Pagination via will_paginate gem
+    * Styling using Bourbon.io sass framework with Neat, Bitters, and Refills
+    * Seeds file using FFaker gem for demo mode
+
+  ##Future Features
+    Features I would like to add/refactor.
+    * Scopes for open and resolved tickets
+    * Sort by severity
+    * Wider test coverage
+    * Refactor application.scss
+    * Refactor presentation logic out of views, particularly class name interpolations
+
+
 
 
 
