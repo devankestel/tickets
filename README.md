@@ -27,8 +27,10 @@ This app was designed to meet certain specifications.
 * CRUD interface for a Ticket
   * Submitting user
     * belongs to :user
+    * has permission to Edit, Delete, Change Status
   * Assigned user
     * belongs to :assignee, class: User, foreign_key: :assignee_id
+    * has permission to Change Status
   * State 
     * has_many :statuses, accessed via status.category
       * "Assigned", "Accepted", "In Process", "On Hold", "Submitted", "Resolved"
