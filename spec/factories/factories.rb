@@ -20,10 +20,10 @@ FactoryGirl.define do
   factory :status do
     category {['Assigned', 'In Process', 'On Hold', 'Submitted', 'Resolved'].sample}
     sequence(:note) {|n| "Most Beautiful Note No. #{n}"}
-    trait :assignee do
-      association assignee, class: :user
+    trait :from_assignee do
+      association :user, factory: :assignee
     end
-    trait :user do
+    trait :from_user do
       user
     end
 

@@ -10,6 +10,9 @@ RSpec.describe Ticket, type: :model do
   it { is_expected.to validate_presence_of :user_id }
   it { is_expected.to validate_presence_of :assignee_id }
   it { is_expected.to validate_presence_of :severity }
+  it { is_expected.to belong_to :user}
+  it { is_expected.to have_many :statuses}
+
 
   describe "#set_status options for current user" do
     before :each do 

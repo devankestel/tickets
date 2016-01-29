@@ -44,8 +44,12 @@ This app was designed to meet certain specifications.
     * All tests in RSpec with help from Capybara, FactoryGirl, and Shoulda Matchers
       * Models (Unit Tests)
         * rspec spec/models/ticket_spec.rb
-          * Validations for presence
-          * Instance methods: set_status_options
+          * Validations, model relations
+          * Instance method: set_status_options
+          * Scopes: issued_by_user, assigned_to_user
+        * rspec spec/models/status_spec.rb
+          * Validations, model relations
+        * User model is not covered because very little customization was made to Devise
 
   ##Extra Features
   * Scopes for recent tickets, tickets issued by user, tickets assigned to user
