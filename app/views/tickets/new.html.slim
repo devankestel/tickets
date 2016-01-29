@@ -6,5 +6,5 @@
     =f.input :assignee, as: :select, collection: User.all.pluck(:email, :id)
   =f.actions do
     .submit =f.action :submit
-    =if @editing
-      .submit =button_to "Back to Ticket", ticket_path(@ticket), method: :get
+    -if @editing
+      =button_to "Back to Ticket", ticket_path(@ticket)
