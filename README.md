@@ -6,12 +6,12 @@ This app is a simple ticket tracker built with Ruby 2.2.2p95 on Rails 4.2.5 with
 
 ##Usage
 
-1. Set up the database by running the following series of commands. This assumes you have Postgres already on your system. If not please visit: http://www.postgresql.org/
-`createuser tickets`
-`createdb -Otickets -Eutf8 tickets_development`
-`createdb -Otickets -Eutf8 tickets_test`
-`rake db:migrate`
-Optional: seed some dummy data with `rake db:seed`
+1. Set up the database by running the following series of commands. This assumes you have Postgres already on your system. If not please visit: http://www.postgresql.org/<br />
+`createuser tickets`<br />
+`createdb -Otickets -Eutf8 tickets_development`<br />
+`createdb -Otickets -Eutf8 tickets_test`<br />
+`rake db:migrate`<br />
+Optional: seed some dummy data with `rake db:seed`<br />
 For said dummy data, the initial password for all users is simply 'password'.
 2. `bundle install`
 3. `rails s` and navigate to `localhost:3000`
@@ -50,7 +50,7 @@ This app was designed to meet certain specifications.
         * rspec spec/models/status_spec.rb
           * Validations, model relations
         * User model is not covered because very little customization was made to Devise
-      * Integration (Feature Test)
+      * Integration (Feature Test)<br />
         More coverage is needed here, but I wanted to show the basic concept of using Capybara.
         * rspec spec/features/ticket_controller_spec.rb
           * Create new ticket 
@@ -68,7 +68,7 @@ This app was designed to meet certain specifications.
     * Scopes for open and resolved tickets
     * Sort by severity
     * Wider test coverage
-    * Refactor application.scss
+    * Refactor application.scss, make DRY
     * Refactor presentation logic out of views, particularly class name interpolations
 
 
