@@ -7,7 +7,18 @@ $critical-color: rgba(192, 46, 29, 1);
 $major-color: rgba(241, 108, 32, 1);
 $minor-color: rgba(236, 170, 56, 1);
 $cosmetic-color: rgba(162, 184, 108, 1);
+$open-color: rgba(197, 20, 125, 1);
+$assigned-color: rgba(129, 19, 186, 1);
+$accepted-color: rgba(45, 19, 186, 1);
+$in-process-color: rgba(19, 91, 186, 1);
+$on-hold-color: rgba(227, 146, 23, 1);
+$submitted-color: rgba(162, 207, 21, 1);
+$resolved-color: rgba(21, 186, 20, 1);
 
+
+.spacer{
+  height: 30px;
+}
 
 .ticket-header{
   @include outer-container;
@@ -20,13 +31,46 @@ $cosmetic-color: rgba(162, 184, 108, 1);
 .show-options{
   @include outer-container;
 }
+
+.status{
+  @include outer-container;
+}
+
 .show-option{
 }
 
+.submit{
+  @include span-columns(3);
+}
+.top-links{
+  @include span-columns(4);
+  text-align: center;
+}
+.top-omega{
+  @include omega;
+}
+form{
+  @include outer-container;
+}
+.index-header{
+  @include outer-container;
+}
+.index-menu{
+  @include span-columns(6);
+}
+.notice, .alert{
+  text-align: center;
+  color: $critical-color;
+}
+td{
+  word-break: break-all;
+}
+
+// All of the button colors
+// This could be refactored into a mixin in future
 #critical{
   background-color: $critical-color;
 }
-
 #major{
   background-color: $major-color;
 }
@@ -35,6 +79,27 @@ $cosmetic-color: rgba(162, 184, 108, 1);
 }
 #cosmetic{
   background-color: $cosmetic-color;
+}
+#open{
+  background-color: $open-color;
+}
+#assigned{
+  background-color: $assigned-color;
+}
+#accepted{
+  background-color: $accepted-color;
+}
+#in-process{
+  background-color: $in-process-color;
+}
+#on-hold{
+  background-color: $on-hold-color;
+}
+#submitted{
+  background-color: $submitted-color;
+}
+#resolved{
+  background-color: $resolved-color;
 }
 
 

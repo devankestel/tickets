@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, path: 'accounts'
   get 'tickets/assigned' => 'tickets#assigned'
   get 'tickets/issued' => 'tickets#issued'
-  resources :tickets
+  resources :tickets do
+    resources :statuses
+  end
   root to: "tickets#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

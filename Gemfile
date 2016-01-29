@@ -45,6 +45,8 @@ gem 'slim', '~> 3.0'
 gem 'formtastic', '~>3.1'
 # Will Paginate to break up index views
 gem 'will_paginate', '~> 3.1'
+# Ffaker for seed data
+gem 'ffaker', '~>2.1'
 
 group :test do
   # Rspec for testing framework

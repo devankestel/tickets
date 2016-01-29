@@ -1,0 +1,7 @@
+=semantic_form_for [@ticket, @status] do |f|
+  =f.inputs do
+    =f.input :category, as: :select, collection: @ticket.set_status_options(@user)
+    =f.input :note
+  =f.actions do
+    .submit =f.action :submit
+    .submit =button_to "Back to Ticket", ticket_path(@ticket), method: :get

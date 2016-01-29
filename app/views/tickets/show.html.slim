@@ -3,7 +3,9 @@ table.show-options
     th.show-option =button_to 'All Tickets', tickets_path, method: :get
     -if @ticket.user == current_user
       th.show-option =button_to 'Edit', edit_ticket_path(@ticket), method: :get
-      th.show-option =button_to 'Delete', ticket_path(@ticket), method: :delete, confirm: "Are you sure?"
+      th.show-option =button_to 'Delete', ticket_path(@ticket), method: :delete, data: {confirm: "Are you sure?"}
+    -if @ticket.user == current_user || @ticket.assignee == current_user
+      th.show-option = button_to 'Change Status', new_ticket_status_path(@ticket), method: :get
 table.ticket-header
   tr
     th Author
@@ -20,3 +22,11 @@ table.ticket-header
 section.ticket-content
   h1 =@ticket.title
   p =@ticket.body
+p
+table.status
+  tr
+    th Status
+    th Updated At
+    th Updated By
+    th Note
+  =render @statuses
