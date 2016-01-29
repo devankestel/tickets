@@ -46,8 +46,9 @@ $resolved-color: rgba(21, 186, 20, 1);
   @include span-columns(4);
   text-align: center;
 }
-.top-omega{
-  @include omega;
+.top-links.top-omega{
+  @include span-columns(4);
+  @include omega();
 }
 form{
   @include outer-container;
