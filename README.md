@@ -23,7 +23,7 @@ This app was designed to meet certain specifications.
 
 * Creating user accounts and logging in, using any authentication gem you choose
   * Implemented with Devise authentication gem and `User` data model. 
-  * Note: not currently configured for ActionMailer password recovery.
+  * Note: not currently configured for `ActionMailer` password recovery.
 * CRUD interface for a Ticket
   * Submitting user
     * belongs to :user
@@ -41,6 +41,11 @@ This app was designed to meet certain specifications.
     * :body
 
   ##Tests
+    * All tests in RSpec with help from Capybara, FactoryGirl, and Shoulda Matchers
+      * Models (Unit Tests)
+        * rspec spec/models/ticket_spec.rb
+          * Validations for presence
+          * Instance methods: set_status_options
 
   ##Extra Features
   * Scopes for recent tickets, tickets issued by user, tickets assigned to user
