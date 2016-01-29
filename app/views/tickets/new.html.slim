@@ -5,4 +5,6 @@
     =f.input :severity, as: :select, collection: ["Critical", "Major", "Minor", "Cosmetic"]
     =f.input :assignee, as: :select, collection: User.all.pluck(:email, :id)
   =f.actions do
-    =f.action :submit
+    .submit =f.action :submit
+    =if @editing
+      .submit =button_to "Back to Ticket", ticket_path(@ticket), method: :get

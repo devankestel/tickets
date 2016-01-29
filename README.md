@@ -11,6 +11,8 @@ This app is a simple ticket tracker built with Ruby 2.2.2p95 on Rails 4.2.5 with
 `createdb -Otickets -Eutf8 tickets_development`
 `createdb -Otickets -Eutf8 tickets_test`
 `rake db:migrate`
+Optional: seed some dummy data with `rake db:seed`
+For said dummy data, the initial password for all users is simply 'password'.
 2. `bundle install`
 3. `rails s` and navigate to `localhost:3000`
 4. `sign up for site and begin creating tickets`
@@ -29,7 +31,7 @@ This app was designed to meet certain specifications.
     * belongs to :assignee, class: User, foreign_key: :assignee_id
   * State 
     * has_many :statuses, accessed via status.category
-      * "Open", "Assigned", "Accepted", "In Process", "On Hold", "Submitted", "Resolved"
+      * "Assigned", "Accepted", "In Process", "On Hold", "Submitted", "Resolved"
   * Severity
     * :severity
       * "Critical", "Major", "Minor", "Cosmetic"
@@ -45,6 +47,7 @@ This app was designed to meet certain specifications.
   * Status history available in addition to current status
   * Status history includes user who changed status and a note
   * Styling using Bourbon.io sass framework with Neat, Bitters, and Refills
-  
+  * Seeds file using FFaker gem for demo mode
+
 
 

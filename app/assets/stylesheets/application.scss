@@ -16,6 +16,10 @@ $submitted-color: rgba(162, 207, 21, 1);
 $resolved-color: rgba(21, 186, 20, 1);
 
 
+.spacer{
+  height: 30px;
+}
+
 .ticket-header{
   @include outer-container;
 }
@@ -35,11 +39,35 @@ $resolved-color: rgba(21, 186, 20, 1);
 .show-option{
 }
 
-// All of the button colors
-// This could be refactored into a method in future
+.submit{
+  @include span-columns(3);
+}
+.top-links{
+  @include span-columns(4);
+  text-align: center;
+}
+.top-omega{
+  @include omega;
+}
+form{
+  @include outer-container;
+}
+.index-header{
+  @include outer-container;
+}
+.index-menu{
+  @include span-columns(6);
+}
+.notice, .alert{
+  text-align: center;
+  color: $critical-color;
+}
 td{
   word-break: break-all;
 }
+
+// All of the button colors
+// This could be refactored into a mixin in future
 #critical{
   background-color: $critical-color;
 }

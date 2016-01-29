@@ -1,16 +1,20 @@
--if current_user
-  =button_to 'New Ticket', new_ticket_path, method: :get
-.button-group
-  label
-    input name="button-group" type="radio" value="item" /
-    span.button-group-item =link_to 'All Tickets', tickets_path
+.spacer
+.spacer
+.index-header
+  .button-group.index-menu
+    label
+      input name="button-group" type="radio" value="item" /
+      span.button-group-item =link_to 'All Tickets', tickets_path
+    -if current_user
+      label
+        input name="button-group" type="radio" value="other-item" /
+        span.button-group-item =link_to 'Issued by Me', tickets_issued_path
+      label
+        input name="button-group" type="radio" value="other-item" /
+        span.button-group-item =link_to 'Assigned to Me', tickets_assigned_path
   -if current_user
-    label
-      input name="button-group" type="radio" value="other-item" /
-      span.button-group-item =link_to 'Issued by Me', tickets_issued_path
-    label
-      input name="button-group" type="radio" value="other-item" /
-      span.button-group-item =link_to 'Assigned to Me', tickets_assigned_path
+    .index-menu =button_to 'New Ticket', new_ticket_path, method: :get
+.spacer
 table.ticket-header
   tr
     th Title

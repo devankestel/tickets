@@ -14,13 +14,13 @@ class Ticket < ActiveRecord::Base
   
   def set_status_options(user)
     if user == self.user && user == self.assignee
-      ["Open", "Assigned", "Accepted", "In Process", "On Hold", "Submitted", "Resolved"]
+      ["Accepted", "In Process", "On Hold", "Submitted", "Resolved"]
     elsif user == self.user
-      ["Open", "Assigned", "On Hold", "Resolved"]
+      ["On Hold", "Resolved"]
     elsif user == self.assignee
       ["Accepted", "In Process", "On Hold", "Submitted"]
     else
-      [self.user, user]
+      []
     end
   end
   def self.table_display(str, len)
